@@ -1,0 +1,26 @@
+import pandas as pd
+import numpy as np
+df_frailty= pd.DataFrame()
+df_frailty['Height'] = [65.8, 71.5, 69.4, 68.2, 67.8, 68.7, 69.8, 70.1, 67.9, 66.8]
+df_frailty['Weight'] = [112, 136, 153, 142, 144, 123, 141, 136, 112, 120]
+df_frailty['Age'] = [30, 19, 45, 22, 29, 50, 51, 23, 17, 39]
+df_frailty['Grip Strength'] = [30, 31, 29, 28, 24, 26, 22, 20, 19, 31]
+df_frailty['Frailty'] = ["N","N","N","Y","Y","N","Y","Y","N","N"]
+df = df_frailty
+
+df.Height = df.Height*0.0254
+df.Weight = df.Weight*0.45359237
+
+df['BMI'] = df.Weight/(df.Height**2)
+df['AgeCategory'] = df['Age'].apply(
+    lambda x: '<30' if x < 30 else '30-45' if x <= 45 else '46-60' if x <= 60 else '>60'
+)
+df['Frailty'] = pd.Series(np.where(df['Frailty'].values == 'Y', 1, 0),
+          df.index)
+df = pd.get_dummies(df, columns=['AgeCategory'], dtype=int)
+pd.set_option('display.max_columns', None)
+print(df)
+summary_stats = df.describe()
+print(summary_stats)
+correlation = df['Frailty'].corr(df['Grip Strength'])
+print(correlation)
