@@ -51,7 +51,6 @@ ax.set_title('Correlation heatmap for subject scores')
 plt.show
 
 #Q5
-
 completed = df[df['test preparation course'] == 'completed']
 correlation_matrix = np.corrcoef(completed['reading score'], completed['math score'])
 correlation_coefficient = correlation_matrix[0, 1]
@@ -69,11 +68,11 @@ mp.legend()
 mp.show()
 mp.savefig('Math and Reading Scatterplots Test Preppers.png', dpi=300)
 
+
 none = df[df['test preparation course'] == 'none']
 correlation_matrix = np.corrcoef(none['reading score'], none['math score'])
 correlation_coefficient = correlation_matrix[0, 1]
 print(f'The correlation for math and reading scores for non-test preppers is {correlation_coefficient}')
-
 
 ax = mp.axes()
 m, b = np.polyfit(none['reading score'],none['math score'],1)
