@@ -2,21 +2,27 @@ A. V1 — Gender boxplots (math vs reading) (2 pts)
 a. Question: Are there gender differences in math vs reading?
 There are slight gendered differences between females and males in both reading and math. In reading, females have a higher median, 25th quartile, and 75th quartile score than males. They also have more outliers. In math, males had higher median, 25th, and 75th quartiles. Females once again had more outliers for math. 
 b. Chart: Side‑by‑side boxplots of math score and reading score grouped by gender.
+
 B. V2 — Test prep impact on math (2 pts)
 a. Question: Do students who completed test prep score higher in math?
+Students who complete test prep tend to score higher in math. The median, 25th, and 75th percentiles are all greater than the group of individuals who did not study. Also, their box plot is tighter, hinting at less standard deviation compared to the group who did not study. There are more frequent outliers with the group that did not study. The median math score is roughly five points better than the group that did not study. I chose the box plot because I felt it would illustrate the distributions and medians best.
 b. Chart: Any chart of your choice for math score by test preparation course
 (completed vs none).
+
 C. V3 — Lunch type and average performance (2 pts)
 a. Question: Does lunch type (standard vs free/reduced) relate to outcomes?
+By the graph, we can see the average score is higher for all subjects when the participant is under the standard lunch plan. For math, there is about a ten point difference. For reading, the difference is around 5 percentage points. And for writing, the difference is around 7 percentage points. It looks like the lunch type has an impact on the test outcomes. 
 b. Chart: Grouped bar chart of mean overall_avg of all the scores (math, reading,
 writing) by lunch.
+
 D. V4 — Subject correlations (2 pts)
 a. Question: How strongly do the three subjects move together?
+From the heatmap, we can see all subjects are positively correlated. This means students with high scores in one subject are likely to also score high in another subject. Math scores and reading scores have a correlation coefficient of 0.82, which is strong. The correlation between reading and writing is even stronger, 0.95. In my code, I checked the graph by having Python create the correlation matrix instead of creating a chart. 
 b. Chart: Correlation heatmap for math, reading, writing with annotated coefficients.
+
 E. V5 — Math vs reading with trend lines by test prep (2 pts)
-a. Question: How strongly are math and reading scores associated, and do students who
-completed the test‑preparation course have a different slope in the math–reading
-relationship than those who did not?
+a. Question: How strongly are math and reading scores associated, and do students who completed the test‑preparation course have a different slope in the math–reading relationship than those who did not?
+Math and reading scores have a strong correlation, but it is stronger with the group that did not prepare for the tests. Students who completed the test preparation course have a flatter slope. We also see that the intercept of the line of best fit is higher, meaning the baseline math score is higher for the people who prepared for the test. There were around 300 more people who did not prepare for the test. If we take the squares of the correlations, we can say the changes in reading score account for 63% and 67% of the variability in math score for test preppers and non-test preppers, respectively. 
 b. Chart: Scatter plot with two straight best‑fit lines (one for each group: completed,
 none).
 i. X‑axis: reading score
