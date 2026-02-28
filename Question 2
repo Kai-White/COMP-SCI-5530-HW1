@@ -1,0 +1,14 @@
+#Ingestion Stage and Pre-Processing
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as mp
+df = pd.read_csv('/home/K/krw456/My Documents/StudentsPerformance.csv')
+
+
+null_count_per_column = df.isnull().sum()
+print(null_count_per_column)
+print(df.head())
+print(df.info())
+print(df.describe())
+
